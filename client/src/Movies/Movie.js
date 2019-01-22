@@ -12,7 +12,7 @@ export default class Movie extends Component {
   }
 
   componentDidMount() {
-    const { id } = this.props.match.params;
+    const id = this.props.match.params.id;
     this.fetchMovie(id);
   }
 
@@ -42,7 +42,7 @@ export default class Movie extends Component {
       return <div>Loading movie information...</div>;
     }
 
-    const { movie } = this.state;
+    const movie = this.state.movie;
     return (
       <div className="save-wrapper">
         <MovieCard movie={movie} />
